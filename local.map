@@ -342,9 +342,34 @@ END # layer
 
 
 LAYER
-  NAME "SBDARE"
+  NAME "SBDARE_A"
   METADATA
-    "wms_title" "SBDARE"
+    "wms_title" "SBDARE_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "SBDARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    EXPRESSION ([PRIM] == 3)
+    STYLE
+      COLOR 200 200 200
+      OUTLINECOLOR 0 0 0
+      WIDTH 0.1
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "SBDARE_P"
+  METADATA
+    "wms_title" "SBDARE_P"
     "wms_include_items" "all"
   END
   TYPE POINT
@@ -357,18 +382,42 @@ LAYER
   END
   LABELITEM "NATSUR"
   CLASS
-  LABEL
-    # FONT "arial"
-    # TYPE truetype
-    # SIZE 6
-    # POSITION AUTO
-  END
+    EXPRESSION ([PRIM] == 1)
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      POSITION AUTO      
+      PARTIALS FALSE
+      BUFFER 5
+      ENCODING GBK
+    END
   END
 END # layer
 
-
-
-
-
+LAYER
+  NAME "SOUNDG"
+  METADATA
+    "wms_title" "SOUNDG"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "SOUNDG"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      COLOR 200 200 200
+      # OUTLINECOLOR 0 0 0
+      # WIDTH 0.1
+      SIZE 100
+    END
+  END
+END # layer
 
 END # Map File
