@@ -57,167 +57,7 @@ OUTPUTFORMAT
   FORMATOPTION "STORAGE=memory"
 END
 
-/* Ocean */
-LAYER
-  NAME "ocean"
-  METADATA
-    "wms_title" "Ocean"
-    "wms_include_items" "all"
-	"gml_include_items" "all"
-	"gml_featureid"     "ogc_fid"	
-  END
-  TYPE POLYGON
-  STATUS ON
-  CONNECTIONTYPE OGR
-  CONNECTION "demo.db"
-  DATA "ocean"
-  PROJECTION
-    "init=epsg:4326"
-  END 
-  CLASS
-    NAME "Ocean"
-    STYLE
-      COLOR 134 204 249
-    END
-  END
-  TEMPLATE "ttt.html"
-END # layer
 
-/* Countries */
-LAYER
-  NAME "countries"
-  METADATA
-    "wms_title" 		"World Countries"
-    "wms_include_items" "all"
-	"gml_include_items" "all"
-	"gml_featureid"     "ogc_fid"
-  END
-  TYPE POLYGON
-  STATUS ON
-  CONNECTIONTYPE OGR
-  CONNECTION "demo.db"
-  DATA "countries"
-  PROJECTION
-    "init=epsg:4326"
-  END
-  LABELITEM "name"
-  CLASS
-    NAME "World Countries"
-    STYLE
-      COLOR 200 200 200
-      OUTLINECOLOR 0 0 0
-      WIDTH 0.1
-    END
-    LABEL
-      FONT sans
-      TYPE truetype
-      POSITION AUTO     
-      PARTIALS FALSE
-      BUFFER 5
-      SIZE 5 
-      COLOR 75 75 75
-      MINFEATURESIZE 10
-    END     
-  END
-  TEMPLATE "ttt.html"  
-END # layer
-
-/* Lakes */
-LAYER
-  NAME "lakes"
-  METADATA
-    "wms_title" "World Lakes"
-    "wms_include_items" "all"
-	"gml_include_items" "all"
-	"gml_featureid"     "ogc_fid"	
-  END
-  TYPE POLYGON
-  STATUS ON
-  CONNECTIONTYPE OGR
-  CONNECTION "demo.db"
-  DATA "lakes"
-  PROJECTION
-    "init=epsg:4326"
-  END 
-  CLASS
-    NAME "Lakes"
-    STYLE
-      COLOR 153 204 255
-    END
-  END
-  TEMPLATE "ttt.html"  
-END # layer
-
-/* Ocean labels */
-LAYER
-  NAME "ocean-labels"
-  METADATA
-    "wms_title" "Ocean Labels"
-    "wms_include_items" "all"
-	"gml_include_items" "all"
-	"gml_featureid"     "ogc_fid"	
-  END
-  TYPE POLYGON
-  STATUS ON
-  CONNECTIONTYPE OGR
-  CONNECTION "demo.db"
-  DATA "marine_region_poly"
-  PROJECTION
-    "init=epsg:4326"
-  END
-  LABELITEM "name"
-  CLASS
-    NAME "Ocean Labels"
-    LABEL
-      COLOR  75 75 75
-      FONT sans-italic
-      TYPE truetype
-      SIZE 5
-      POSITION AUTO      
-      PARTIALS FALSE
-      BUFFER 5
-    END
-    #MAXSCALEDENOM 50000000
-  END
-  TEMPLATE "ttt.html"  
-END # layer
-
-/* Places */
-LAYER
-  NAME "places"
-  METADATA
-    "wms_title" "Populated Places"
-    "wms_include_items" "all"
-	"gml_include_items" "all"
-	"gml_featureid"     "ogc_fid"	
-  END
-  TYPE POINT
-  STATUS ON
-  CONNECTIONTYPE OGR
-  CONNECTION "demo.db"
-  DATA "places"
-  PROJECTION
-    "init=epsg:4326"
-  END
-  LABELITEM "name"
-  CLASS
-    NAME "Populated Places"
-    SYMBOL "square"
-    SIZE 4
-    COLOR 150 150 150
-    LABEL
-      COLOR  75 75 75
-      FONT sans
-      TYPE truetype
-      SIZE 5
-      POSITION AUTO      
-      PARTIALS FALSE
-      BUFFER 5
-    END
-    MAXSCALEDENOM 50000000
-  END
-  TEMPLATE "ttt.html"  
-END # layer
 
 LAYER
   NAME "SLCONS_P"
@@ -333,9 +173,9 @@ LAYER
   CLASS
     STYLE
       SYMBOL "RTPBCN"
-      COLOR "#FF0000"
-      SIZE 30
-      OFFSET -2.5 -5 
+      COLOR 255 0 0
+      SIZE 25
+
     END
   END
 END # layer
@@ -358,9 +198,9 @@ LAYER
   CLASS
     EXPRESSION ([PRIM] == 3)
     STYLE
-      COLOR 200 200 200
-      OUTLINECOLOR 0 0 0
-      WIDTH 0.1
+      OUTLINECOLOR 139 149 147
+      OUTLINEWIDTH 3
+      PATTERN 5.0 5.0 END
     END
   END
 END # layer
@@ -388,34 +228,811 @@ LAYER
       FONT sans
       TYPE truetype
       SIZE 5
-      POSITION AUTO      
-      PARTIALS FALSE
-      BUFFER 5
       ENCODING GBK
     END
   END
 END # layer
 
+# LAYER
+#   NAME "SOUNDG"
+#   METADATA
+#     "wms_title" "SOUNDG"
+#     "wms_include_items" "all"
+#   END
+#   TYPE POINT
+#   STATUS ON
+#   CONNECTIONTYPE OGR
+#   CONNECTION "./data/C1100102.000"
+#   DATA "SOUNDG"
+#   PROJECTION
+#     "init=epsg:4326"
+#   END
+#   CLASS
+#     STYLE
+#       COLOR 200 200 200
+#       # OUTLINECOLOR 0 0 0
+#       # WIDTH 0.1
+#       SIZE 100
+#     END
+#   END
+# END # layer
+
 LAYER
-  NAME "SOUNDG"
+  NAME "LNDMRK"
   METADATA
-    "wms_title" "SOUNDG"
+    "wms_title" "LNDMRK"
     "wms_include_items" "all"
   END
   TYPE POINT
   STATUS ON
   CONNECTIONTYPE OGR
   CONNECTION "./data/C1100102.000"
-  DATA "SOUNDG"
+  DATA "LNDMRK"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    EXPRESSION([CONRAD] == 2)
+    STYLE
+      SYMBOL "LNDMRK"
+      SIZE 15
+      OFFSET 0 -7.5
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "OFSPLF"
+  METADATA
+    "wms_title" "OFSPLF"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "OFSPLF"
   PROJECTION
     "init=epsg:4326"
   END
   CLASS
     STYLE
-      COLOR 200 200 200
-      # OUTLINECOLOR 0 0 0
-      # WIDTH 0.1
-      SIZE 100
+      SYMBOL "OFSPLF"
+      SIZE 10
+    END
+  END
+END # layer
+
+LAYER
+  NAME "WRECKS1"
+  METADATA
+    "wms_title" "WRECKS1"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "WRECKS"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CATWRK] == 1)
+    STYLE
+      SYMBOL "WRECKS1"
+      SIZE 20
+    END
+  END
+END # layer
+
+LAYER
+  NAME "WRECKS2"
+  METADATA
+    "wms_title" "WRECKS2"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "WRECKS"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CATWRK] == 2)
+    STYLE
+      SYMBOL "WRECKS2"
+      SIZE 20
+      
+    END
+  END
+END # layer
+
+LAYER
+  NAME "TS_FEB1"
+  METADATA
+    "wms_title" "TS_FEB1"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "TS_FEB"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CAT_TS] == 1)
+    STYLE
+      SYMBOL "TS_FEB1"
+      SIZE 30
+      ANGLE [ORIENT]
+    END
+  END
+END # layer
+
+LAYER
+  NAME "TS_FEB2"
+  METADATA
+    "wms_title" "TS_FEB2"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "TS_FEB"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CAT_TS] == 2)
+    STYLE
+      SYMBOL "TS_FEB2"
+      SIZE 30
+      ANGLE [ORIENT]
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "LNDARE_P"
+  METADATA
+    "wms_title" "LNDARE_P"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "LNDARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([PRIM] == 1)
+    STYLE
+      SYMBOL "LNDARE"
+      SIZE 10
+    END
+  END
+END # layer
+
+LAYER
+  NAME "LNDARE_A"
+  METADATA
+    "wms_title" "LNDARE_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "LNDARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([PRIM] == 3)
+    STYLE
+      COLOR 207 195 130
+      # OUTLINECOLOR 139 149 147
+      # OUTLINEWIDTH 3
+      # PATTERN 5.0 5.0 END
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "LNDRGN_P"
+  METADATA
+    "wms_title" "LNDRGN_P"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "LNDRGN"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "OBJNAM"
+  CLASS
+    EXPRESSION([PRIM] == 1)
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      ENCODING GBK
+      OFFSET 0 -10
+    END
+    STYLE
+      SYMBOL "LNDRGN"
+      SIZE 20
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "LNDRGN_A"
+  METADATA
+    "wms_title" "LNDRGN_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "LNDRGN"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "OBJNAM"
+  CLASS
+    EXPRESSION([PRIM] == 3)
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      ENCODING GBK
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "UWTROC3"
+  METADATA
+    "wms_title" "UWTROC3"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "UWTROC"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([WATLEV] == 3)
+    STYLE
+      SYMBOL "UWTROC3"
+      SIZE 20
+    END
+  END
+END # layer
+
+LAYER
+  NAME "UWTROC4"
+  METADATA
+    "wms_title" "UWTROC4"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "UWTROC"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([WATLEV] == 4)
+    STYLE
+      SYMBOL "UWTROC4"
+      SIZE 20
+    END
+  END
+END # layer
+
+LAYER
+  NAME "UWTROC5"
+  METADATA
+    "wms_title" "UWTROC5"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "UWTROC"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([WATLEV] == 5)
+    STYLE
+      SYMBOL "UWTROC5"
+      SIZE 20
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "FORSTC"
+  METADATA
+    "wms_title" "FORSTC"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "FORSTC"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      SYMBOL "FORSTC"
+      SIZE 12
+    END
+  END
+END # layer
+
+LAYER
+  NAME "OBSTRN_A"
+  METADATA
+    "wms_title" "OBSTRN_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "OBSTRN"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 2
+      COLOR 136 191 239
+      OUTLINECOLOR 0 0 0
+      PATTERN 5.0 5.0 END
+    END
+  END
+END # layer
+
+
+
+LAYER
+  NAME "OBSTRN9"
+  METADATA
+    "wms_title" "OBSTRN9"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "OBSTRN"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CATOBS]==9 AND [QUASOU]==2)
+    STYLE
+      SYMBOL "OBSTRN9"
+      SIZE 12
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "OBSTRN_N"
+  METADATA
+    "wms_title" "OBSTRN_N"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "OBSTRN"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+  EXPRESSION([CATOBS]==NULL AND [QUASOU]==2)
+    STYLE
+      SYMBOL "OBSTRN_N"
+      SIZE 12
+    END
+  END
+END # layer
+
+
+
+LAYER
+  NAME "WATTUR"
+  METADATA
+    "wms_title" "WATTUR"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "WATTUR"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      SYMBOL "WATTUR"
+      SIZE 20
+    END
+  END
+END # layer
+
+LAYER
+  NAME "BUAARE"
+  METADATA
+    "wms_title" "BUAARE"
+    "wms_include_items" "all"
+  END
+  TYPE POINT
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "BUAARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  LABELITEM "OBJNAM"
+  CLASS
+    LABEL
+      COLOR  75 75 75
+      FONT sans
+      TYPE truetype
+      SIZE 5
+      ENCODING GBK
+      OFFSET 0 -10
+    END
+    STYLE
+      SYMBOL "BUAARE"
+      SIZE 8
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "COALNE"
+  METADATA
+    "wms_title" "COALNE"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "COALNE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 1
+      COLOR 97 104 102
+    END
+  END
+END # layer
+
+LAYER
+  NAME "DEPCNT"
+  METADATA
+    "wms_title" "DEPCNT"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "DEPCNT"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 1
+      COLOR 139 149 147
+    END
+  END
+END # layer
+
+LAYER
+  NAME "ROADWY"
+  METADATA
+    "wms_title" "ROADWY"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "ROADWY"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 2
+      COLOR 148 115 40
+    END
+  END
+END # layer
+
+# LAYER
+#   NAME "WATTUR"
+#   METADATA
+#     "wms_title" "WATTUR"
+#     "wms_include_items" "all"
+#   END
+#   TYPE LINE
+#   STATUS ON
+#   CONNECTIONTYPE OGR
+#   CONNECTION "./data/C1100102.000"
+#   DATA "WATTUR"
+#   PROJECTION
+#     "init=epsg:4326"
+#   END
+#   CLASS
+#     STYLE
+#       WIDTH 1
+#       COLOR 139 149 147
+#     END
+#   END
+# END # layer
+
+
+LAYER
+  NAME "MAGVAR"
+  METADATA
+    "wms_title" "MAGVAR"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "MAGVAR"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 0.5
+      COLOR 216 172 234
+    END
+  END
+END # layer
+
+LAYER
+  NAME "RAILWY"
+  METADATA
+    "wms_title" "RAILWY"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "RAILWY"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 1
+      COLOR 148 115 40
+    END
+  END
+END # layer
+
+LAYER
+  NAME "DEPARE"
+  METADATA
+    "wms_title" "DEPARE"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "DEPARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 1
+      COLOR 139 149 147
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "RIVERS"
+  METADATA
+    "wms_title" "RIVERS"
+    "wms_include_items" "all"
+  END
+  TYPE LINE
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "RIVERS"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      WIDTH 1
+      COLOR 0 0 0
+    END
+  END
+END # layer
+
+
+
+LAYER
+  NAME "RESARE"
+  METADATA
+    "wms_title" "RESARE"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "RESARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      OUTLINEWIDTH 3
+      OUTLINECOLOR 200 66 198
+      PATTERN 5.0 5.0 END
+    END
+  END
+END # layer
+
+LAYER
+  NAME "DMPGRD"
+  METADATA
+    "wms_title" "DMPGRD"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "DMPGRD"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      OUTLINEWIDTH 1
+      OUTLINECOLOR 200 66 198
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "LAKARE"
+  METADATA
+    "wms_title" "LAKARE"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "LAKARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      COLOR 136 191 239
+      OUTLINEWIDTH 1
+      OUTLINECOLOR 0 0 0 
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "RIVERS_A"
+  METADATA
+    "wms_title" "RIVERS_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "RIVERS"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    STYLE
+      COLOR 136 191 239
+    END
+  END
+END # layer
+
+
+LAYER
+  NAME "DEPARE_A"
+  METADATA
+    "wms_title" "DEPARE_A"
+    "wms_include_items" "all"
+  END
+  TYPE POLYGON
+  STATUS ON
+  CONNECTIONTYPE OGR
+  CONNECTION "./data/C1100102.000"
+  DATA "DEPARE"
+  PROJECTION
+    "init=epsg:4326"
+  END
+  CLASS
+    EXPRESSION([DRVAL1] == -5 AND [DRVAL2] = 0)
+    STYLE
+      COLOR 147 189 155
+    END
+    EXPRESSION([DRVAL1] == 0 AND [DRVAL2] = 10)
+    STYLE
+      COLOR 136 191 239
+    END
+    EXPRESSION([DRVAL1] == 10 AND [DRVAL2] = 50)
+    STYLE
+      COLOR 168 206 242
+    END
+    EXPRESSION([DRVAL1] >= 50)
+    STYLE
+      COLOR 221 241 238
     END
   END
 END # layer

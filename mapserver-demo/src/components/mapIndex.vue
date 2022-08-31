@@ -23,7 +23,47 @@ function initMap() {
     source: new TileWMS({
       url: "http://127.0.0.1:8181/cgi-bin/mapserv.exe",
       params: {
-        layers: ["SLCONS_P","SLCONS_L","LIGHTS", "BCNSPP", "RTPBCN", "SBDARE"],
+        layers: [
+          "LNDRGN_A",
+          "SBDARE_A",
+          "LNDARE_A",
+          "DMPGRD",
+          "LAKARE",
+          "RIVERS_A",
+          "RESARE",
+          "DEPARE_A",
+          "SLCONS_P",
+          "SLCONS_L",
+          "COALNE",
+          "DEPCNT",
+          "LIGHTS",
+          "BCNSPP",
+          "RTPBCN",
+          "ROADWY",
+          // "WATTUR",
+          "MAGVAR",
+          "RAILWY",
+          "DEPARE",
+          "RIVERS",
+          "OBSTRN_A",
+          "SBDARE_P",
+          "LNDMRK",
+          "OFSPLF",
+          "WRECKS1",
+          "WRECKS2",
+          "TS_FEB1",
+          "TS_FEB2",
+          "LNDARE_P",
+          "LNDRGN_P",
+          "UWTROC3",
+          "UWTROC4",
+          "UWTROC5",
+          "FORSTC",
+          "BUAARE",
+          "WATTUR",
+          "OBSTRN9",
+          "OBSTRN_N"
+        ],
         MAP: "D:/mapserver/local.map",
         TILED: true,
       },
@@ -35,8 +75,8 @@ function initMap() {
     target: "mapDiv",
     // 设置图层
     layers: [
-        OSMLayer.value, 
-        wmsLayer.value
+      OSMLayer.value, 
+      wmsLayer.value
     ],
     // 设置视图
     view: new View({
