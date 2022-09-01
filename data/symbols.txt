@@ -33,124 +33,155 @@ END
 SYMBOL
 NAME "SLCONS"
 TYPE svg
-IMAGE "./svg/SVG/SLCONS.svg"
+IMAGE "./svg/svg/SLCONS.svg"
 END
 
 SYMBOL
 NAME "LIGHTS"
 TYPE svg
-IMAGE "./svg/Lighted_Beacon.svg"
+IMAGE "./svg/svg/LIGHTS.svg"
 END
 
 SYMBOL
 NAME "BCNSPP"
 TYPE svg
-IMAGE "./svg/SVG/Stake.svg"
+IMAGE "./svg/svg/BCNSPP.svg"
 END
  
 
 SYMBOL
 NAME "RTPBCN"
 TYPE svg
-IMAGE "./svg/SVG/RTPBCN.svg"
+IMAGE "./svg/svg/RTPBCN.svg"
 END
 
 
 SYMBOL
 NAME "LNDMRK"
 TYPE svg
-IMAGE "./svg/SVG/LNDMRK1.svg"
+IMAGE "./svg/svg/LNDMRK1.svg"
 END
 
 
 SYMBOL
 NAME "OFSPLF"
 TYPE svg
-IMAGE "./svg/SVG/OFSPLF.svg"
+IMAGE "./svg/svg/OFSPLF.svg"
+END
+
+SYMBOL
+NAME "CURENT"
+TYPE svg
+IMAGE "./svg/svg/CURENT.svg"
 END
 
 
 SYMBOL
 NAME "WRECKS1"
 TYPE svg
-IMAGE "./svg/SVG/WRECKS1.svg"
+IMAGE "./svg/svg/WRECKS1.svg"
 END
 
 SYMBOL
 NAME "WRECKS2"
 TYPE svg
-IMAGE "./svg/SVG/WRECKS2.svg"
+IMAGE "./svg/svg/WRECKS2.svg"
 END
 
 SYMBOL
 NAME "TS_FEB1"
 TYPE svg
-IMAGE "./svg/SVG/TS_FEB1.svg"
+IMAGE "./svg/svg/TS_FEB1.svg"
 END
 
 SYMBOL
 NAME "TS_FEB2"
 TYPE svg
-IMAGE "./svg/SVG/TS_FEB2.svg"
+IMAGE "./svg/svg/TS_FEB2.svg"
 END
 
 SYMBOL
 NAME "LNDARE"
 TYPE svg
-IMAGE "./svg/SVG/LNDARE.svg"
+IMAGE "./svg/svg/LNDARE.svg"
+END
+
+SYMBOL
+NAME "RDOSTA"
+TYPE svg
+IMAGE "./svg/svg/RDOSTA.svg"
 END
 
 SYMBOL
 NAME "LNDRGN"
 TYPE svg
-IMAGE "./svg/SVG/LNDRGN.svg"
+IMAGE "./svg/svg/LNDRGN.svg"
 END
+
+SYMBOL
+NAME "CTNARE"
+TYPE svg
+IMAGE "./svg/svg/CTNARE.svg"
+END
+
 
 SYMBOL
 NAME "UWTROC3"
 TYPE svg
-IMAGE "./svg/SVG/UWTROC3.svg"
+IMAGE "./svg/svg/UWTROC3.svg"
 END
 
 SYMBOL
 NAME "UWTROC4"
 TYPE svg
-IMAGE "./svg/SVG/UWTROC4.svg"
+IMAGE "./svg/svg/UWTROC4.svg"
 END
 
 SYMBOL
 NAME "UWTROC5"
 TYPE svg
-IMAGE "./svg/SVG/UWTROC5.svg"
+IMAGE "./svg/svg/UWTROC5.svg"
 END
 
 SYMBOL
 NAME "FORSTC"
 TYPE svg
-IMAGE "./svg/SVG/FORSTC.svg"
+IMAGE "./svg/svg/FORSTC.svg"
 END
 
 SYMBOL
 NAME "OBSTRN9"
 TYPE svg
-IMAGE "./svg/SVG/OBSTRN9.svg"
+IMAGE "./svg/svg/OBSTRN9.svg"
 END
 
 SYMBOL
 NAME "OBSTRN_N"
 TYPE svg
-IMAGE "./svg/SVG/WRECKS2.svg"
+IMAGE "./svg/svg/WRECKS2.svg"
+END
+
+SYMBOL
+NAME "OBSTRN_A"
+TYPE svg
+IMAGE "./svg/svg/OBSTRN_poly.svg"
+END
+
+SYMBOL
+NAME "MAGVAR"
+TYPE svg
+IMAGE "./svg/svg/MAGVAR.svg"
 END
 
 SYMBOL
 NAME "WATTUR"
 TYPE svg
-IMAGE "./svg/SVG/WATTUR.svg"
+IMAGE "./svg/svg/WATTUR.svg"
 END
 
 SYMBOL
 NAME "BUAARE"
 TYPE svg
-IMAGE "./svg/SVG/BUAARE.svg"
+IMAGE "./svg/svg/BUAARE.svg"
 END
 

@@ -29,7 +29,7 @@ WEB
     "wms_title"   			"MS4W Demo WMS Server"
     # "wms_abstract"      	"This demonstration server was setup by GatewayGeo (https://gatewaygeomatics.com/) and is powered by MS4W (https:/E:/mapserver/ms4w.com/)."      
     "wms_onlineresource" 	"http://127.0.0.1:8181/cgi-bin/mapserv.exe?map=D:/mapserver/local.map"
-    # "wms_service_onlineresource" "https://gatewaygeomatics.com/"    
+    "wms_service_onlineresource" "https://gatewaygeomatics.com/"    
     # "wms_contactperson"		"Jeff McKenna" 
     # "wms_contactorganization" "GatewayGeo"
     # "wms_contactposition"	"President"
@@ -76,7 +76,7 @@ LAYER
   CLASS
   EXPRESSION([PRIM] == 1)
     STYLE
-      SYMBOL "SLCONS"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -124,7 +124,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "LIGHTS"
+      SYMBOL "tent"
       SIZE 50
       ANGLE -270
       MAXSCALEDENOM 10000000
@@ -149,7 +149,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "BCNSPP"
+      SYMBOL "tent"
       OFFSET 0 -10
       SIZE 20
       MAXSCALEDENOM 10000000
@@ -174,7 +174,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "RTPBCN"
+      SYMBOL "tent"
       COLOR 255 0 0
       SIZE 25
       MAXSCALEDENOM 10000000
@@ -279,7 +279,7 @@ LAYER
   CLASS
     EXPRESSION([CONRAD] == 2)
     STYLE
-      SYMBOL "LNDMRK"
+      SYMBOL "tent"
       SIZE 15
       OFFSET 0 -7.5
       MAXSCALEDENOM 10000000
@@ -304,7 +304,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "OFSPLF"
+      SYMBOL "tent"
       SIZE 10
       MAXSCALEDENOM 10000000
     END
@@ -327,7 +327,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "CURENT"
+      SYMBOL "tent"
       SIZE 30
       ANGLE [ORIENT]
       MAXSCALEDENOM 10000000
@@ -352,7 +352,7 @@ LAYER
   CLASS
   EXPRESSION([CATWRK] == 1)
     STYLE
-      SYMBOL "WRECKS1"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -376,7 +376,7 @@ LAYER
   CLASS
   EXPRESSION([CATWRK] == 2)
     STYLE
-      SYMBOL "WRECKS2"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -400,7 +400,7 @@ LAYER
   CLASS
   EXPRESSION([CATWRK] == 5)
     STYLE
-      SYMBOL "WRECKS2"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -424,7 +424,7 @@ LAYER
   CLASS
   EXPRESSION([CAT_TS] == 1)
     STYLE
-      SYMBOL "TS_FEB1"
+      SYMBOL "tent"
       SIZE 30
       ANGLE [ORIENT]
       MAXSCALEDENOM 10000000
@@ -449,7 +449,7 @@ LAYER
   CLASS
   EXPRESSION([CAT_TS] == 2)
     STYLE
-      SYMBOL "TS_FEB2"
+      SYMBOL "tent"
       SIZE 30
       ANGLE [ORIENT]
       MAXSCALEDENOM 10000000
@@ -475,7 +475,7 @@ LAYER
   CLASS
   EXPRESSION([PRIM] == 1)
     STYLE
-      SYMBOL "LNDARE"
+      SYMBOL "tent"
       SIZE 10
       MAXSCALEDENOM 10000000
     END
@@ -524,7 +524,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "RDOSTA"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -557,7 +557,7 @@ LAYER
       OFFSET 0 -10
     END
     STYLE
-      SYMBOL "LNDRGN"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -609,7 +609,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "CTNARE"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -634,7 +634,7 @@ LAYER
   CLASS
   EXPRESSION([WATLEV] == 3)
     STYLE
-      SYMBOL "UWTROC3"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -658,7 +658,7 @@ LAYER
   CLASS
   EXPRESSION([WATLEV] == 4)
     STYLE
-      SYMBOL "UWTROC4"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -682,7 +682,7 @@ LAYER
   CLASS
   EXPRESSION([WATLEV] == 5)
     STYLE
-      SYMBOL "UWTROC5"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -706,7 +706,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "FORSTC"
+      SYMBOL "tent"
       SIZE 12
       MAXSCALEDENOM 10000000
     END
@@ -734,7 +734,7 @@ LAYER
 
     END
     STYLE
-      SYMBOL "OBSTRN_A"
+      SYMBOL "tent"
       SIZE 20
     END
     STYLE
@@ -762,7 +762,7 @@ LAYER
   CLASS
   EXPRESSION([CATOBS]==9 AND [QUASOU]==2)
     STYLE
-      SYMBOL "OBSTRN9"
+      SYMBOL "tent"
       SIZE 12
       MAXSCALEDENOM 10000000
     END
@@ -787,7 +787,7 @@ LAYER
   CLASS
   EXPRESSION([CATOBS]==NULL AND [QUASOU]==2)
     STYLE
-      SYMBOL "OBSTRN_N"
+      SYMBOL "tent"
       SIZE 12
       MAXSCALEDENOM 10000000
     END
@@ -812,7 +812,7 @@ LAYER
   END
   CLASS
     STYLE
-      SYMBOL "WATTUR"
+      SYMBOL "tent"
       SIZE 20
       MAXSCALEDENOM 10000000
     END
@@ -844,7 +844,7 @@ LAYER
       OFFSET 0 -10
     END
     STYLE
-      SYMBOL "BUAARE"
+      SYMBOL "tent"
       SIZE 8
       MAXSCALEDENOM 10000000
     END
@@ -958,7 +958,7 @@ LAYER
   CLASS
     EXPRESSION([PRIM] == 1)
     STYLE
-      SYMBOL "MAGVAR"
+      SYMBOL "tent"
       SIZE 30
       MAXSCALEDENOM 10000000
     END

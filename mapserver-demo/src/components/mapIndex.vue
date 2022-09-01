@@ -6,7 +6,14 @@ import OSM from "ol/source/OSM";
 import TileWMS from "ol/source/TileWMS";
 import View from "ol/View";
 import { onMounted, ref } from "vue";
-
+import {
+  Zoom,
+  ZoomSlider,
+  MousePosition,
+  ScaleLine,
+  OverviewMap,
+  ZoomToExtent,
+} from "ol/control";
 const map = ref(null);
 const OSMLayer = ref(null);
 const wmsLayer = ref(null);
@@ -25,36 +32,44 @@ function initMap() {
       params: {
         layers: [
           "LNDRGN_A",
-          "SBDARE_A",
           "LNDARE_A",
+          "SBDARE_A", 
           "DMPGRD",
           "LAKARE",
           "RIVERS_A",
           "RESARE",
-          "DEPARE_A",
-          "SLCONS_P",
+          "DEPARE_A1",
+          "DEPARE_A2",
+          "DEPARE_A3",
+          "DEPARE_A4",
+          "OBSTRN_A",
           "SLCONS_L",
           "COALNE",
           "DEPCNT",
-          "LIGHTS",
-          "BCNSPP",
+          "LIGHTS",       
           "RTPBCN",
           "ROADWY",
-          // "WATTUR",
-          "MAGVAR",
+          "WATTUR_L",
+          "MAGVAR_L",
           "RAILWY",
           "DEPARE",
           "RIVERS",
-          "OBSTRN_A",
+          "SLCONS_P",
+          "LNDARE_P",
+          "RDOSTA",
           "SBDARE_P",
           "LNDMRK",
           "OFSPLF",
+          "CURENT",
           "WRECKS1",
           "WRECKS2",
+          "WRECKS5",
           "TS_FEB1",
           "TS_FEB2",
-          "LNDARE_P",
+          "MAGVAR_P",
           "LNDRGN_P",
+          "BCNSPP",
+          "CTNARE", 
           "UWTROC3",
           "UWTROC4",
           "UWTROC5",
@@ -62,7 +77,7 @@ function initMap() {
           "BUAARE",
           "WATTUR",
           "OBSTRN9",
-          "OBSTRN_N"
+          "OBSTRN_N",
         ],
         MAP: "D:/mapserver/local.map",
         TILED: true,
@@ -75,8 +90,8 @@ function initMap() {
     target: "mapDiv",
     // 设置图层
     layers: [
-      OSMLayer.value, 
-      wmsLayer.value
+      // OSMLayer.value,
+      wmsLayer.value,
     ],
     // 设置视图
     view: new View({
@@ -84,6 +99,10 @@ function initMap() {
       zoom: 3, // 缩放等级
       projection: "EPSG:4326", // 坐标系
     }),
+
+    controls: [
+      new ScaleLine(), // 比例尺
+    ],
   });
 }
 onMounted(() => {
