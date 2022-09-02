@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- see the accompanying mapcache.xml.sample for a fully commented configuration file -->
+
+<mapcache>
+   <cache name="disk" type="disk">
+      <base>E:/mapserver/ms4w/tmp/ms_tmp/cache</base>
+      <!--<symlink_blank/>-->
+   </cache>
+   
+   <cache name="berkeley" type="bdb">
+      <base>E:/mapserver/ms4w/tmp/ms_tmp/cache</base>
+      <!--<symlink_blank/>-->
+   </cache>  
+   
+   <cache name="tmpl" type="disk" layout="template">
+      <template>E:/mapserver/ms4w/tmp/ms_tmp/cache/{tileset}#{grid}/{z}/{x}/{y}.{ext}</template>
+      <!-- <xcount>64</xcount> -->
+     <!-- <ycount>64</ycount> -->
+     <!-- <format>myjpeg</format> -->
+   </cache> 
+   
+   <cache name="sqlitetemplate" type="sqlite3">
+      <dbfile>E:/mapserver/ms4w/tmp/ms_tmp/cache/sqlitefile.db</dbfile>
+      <pragma name="max_page_count">10000000</pragma>
+   </cache>   
+   
+   <format name="PNGQ_FAST" type ="PNG">
+
+   <!-- compression
+
+        PNG compression: best or fast
+
+        Note that "best" compression is CPU intensive for little gain over
+        the default default compression obtained by leaving out this tag.
+   -->
+   <compression>fast</compression>
+
+   <!-- colors
+
+        If supplied, this enables PNG quantization which reduces the number
+        of colors in an image to attain higher compression. This operation is
+        destructive, and can cause artifacts in the stored image.
+
+        The number of colors can be between 2 and 256.
+  -->
+  <colors>256</colors>
+	</format>
+	
+<!-- <grid name="WGS84">
+   <metadata>
+      <title>GoogleCRS84Quad</title>
+      <WellKnownScaleSet>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</WellKnownScaleSet>
+   </metadata>
+   <extent>-180 -90 180 90</extent>
+   <srs>EPSG:4326</srs>
+   <units>dd</units>
+   <size>256 256</size>
+   <resolutions>0.703125000000000 0.351562500000000 0.175781250000000 8.78906250000000e-2 4.39453125000000e-2 2.19726562500000e-2 1.09863281250000e-2 5.49316406250000e-3 2.74658203125000e-3 1.37329101562500e-3 6.86645507812500e-4 3.43322753906250e-4 1.71661376953125e-4 8.58306884765625e-5 4.29153442382812e-5 2.14576721191406e-5 1.07288360595703e-5 5.36441802978516e-6</resolutions>
+</grid> -->
+
+
+   <source name="vmap0" type="wms">
+      <getmap>
+         <params>
+		 	<MAP>D:/mapserver/local.map</MAP>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>LNDRGN_A</LAYERS>
+            <LAYERS>LNDARE_A</LAYERS>
+            <LAYERS>SBDARE_A</LAYERS>
+            <LAYERS>DMPGRD</LAYERS>
+            <LAYERS>LAKARE</LAYERS>
+            <LAYERS>RIVERS_A</LAYERS>
+            <LAYERS>RESARE</LAYERS>
+            <LAYERS>DEPARE_A1</LAYERS>
+            <LAYERS>DEPARE_A2</LAYERS>
+            <LAYERS>DEPARE_A3</LAYERS>
+            <LAYERS>DEPARE_A4</LAYERS>
+            <LAYERS>OBSTRN_A</LAYERS>
+            <LAYERS>SLCONS_L</LAYERS>
+            <LAYERS>COALNE</LAYERS>
+            <LAYERS>DEPCNT</LAYERS>
+            <LAYERS>LIGHTS</LAYERS>
+            <LAYERS>RTPBCN</LAYERS>
+            <LAYERS>ROADWY</LAYERS>
+            <LAYERS>WATTUR_L</LAYERS>
+            <LAYERS>MAGVAR_L</LAYERS>
+            <LAYERS>RAILWY</LAYERS>
+            <LAYERS>DEPARE</LAYERS>
+            <LAYERS>RIVERS</LAYERS>
+            <LAYERS>SLCONS_P</LAYERS>
+            <LAYERS>LNDARE_P</LAYERS>
+            <LAYERS>RDOSTA</LAYERS>
+            <LAYERS>SBDARE_P</LAYERS>
+            <LAYERS>LNDMRK</LAYERS>
+            <LAYERS>CURENT</LAYERS>
+            <LAYERS>WRECKS1</LAYERS>
+            <LAYERS>WRECKS2</LAYERS>
+            <LAYERS>WRECKS5</LAYERS>
+            <LAYERS>TS_FEB1</LAYERS>
+            <LAYERS>TS_FEB2</LAYERS>
+            <LAYERS>MAGVAR_P</LAYERS>
+            <LAYERS>LNDRGN_P</LAYERS>
+            <LAYERS>BCNSPP</LAYERS>
+            <LAYERS>CTNARE</LAYERS>
+            <LAYERS>UWTROC3</LAYERS>
+             <LAYERS>UWTROC4</LAYERS>
+            <LAYERS>UWTROC5</LAYERS>
+            <LAYERS>FORSTC</LAYERS>
+            <LAYERS>BUAARE</LAYERS>
+            <LAYERS>WATTUR</LAYERS>
+            <LAYERS>OBSTRN9</LAYERS>
+            <LAYERS>OBSTRN_N</LAYERS>
+         </params>
+      </getmap>
+      
+      <http>
+         <url>http://127.0.0.1:8181/cgi-bin/mapserv.exe</url>
+      </http>
+   </source>
+   
+   <tileset name="test">
+      <source>vmap0</source>
+      <cache>tmpl</cache>
+      <grid>WGS84</grid>
+      <format>PNGQ_FAST</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
+   </tileset>
+
+
+   <default_format>JPEG</default_format>
+
+   <service type="wms" enabled="true">
+      <full_wms>assemble</full_wms>
+      <resample_mode>bilinear</resample_mode>
+      <format>PNGQ_FAST</format>
+      <maxsize>4096</maxsize>
+   </service>
+   <service type="wmts" enabled="true"/>
+   <service type="tms" enabled="true"/>
+   <service type="kml" enabled="true"/>
+   <service type="gmaps" enabled="true"/>
+   <service type="ve" enabled="true"/>
+   <service type="demo" enabled="true"/>
+
+   <errors>report</errors>
+   <lock_dir>E:/mapserver/ms4w/tmp/ms_tmp/cache</lock_dir>
+
+</mapcache>
