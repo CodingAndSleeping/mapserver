@@ -14,7 +14,7 @@
    </cache>  
    
    <cache name="tmpl" type="disk" layout="template">
-      <template>E:/mapserver/ms4w/tmp/ms_tmp/cache/{tileset}#{grid}/{z}/{x}/{y}.{ext}</template>
+      <template>E:/mapserver/ms4w/tmp/ms_tmp/cache/{tileset}/{z}/{x}/{y}.{ext}</template>
       <!-- <xcount>64</xcount> -->
      <!-- <ycount>64</ycount> -->
      <!-- <format>myjpeg</format> -->
@@ -47,7 +47,7 @@
   <colors>256</colors>
 	</format>
 	
-<!-- <grid name="WGS84">
+<!-- <grid name="mygrid">
    <metadata>
       <title>GoogleCRS84Quad</title>
       <WellKnownScaleSet>urn:ogc:def:wkss:OGC:1.0:GoogleCRS84Quad</WellKnownScaleSet>
@@ -57,60 +57,16 @@
    <units>dd</units>
    <size>256 256</size>
    <resolutions>0.703125000000000 0.351562500000000 0.175781250000000 8.78906250000000e-2 4.39453125000000e-2 2.19726562500000e-2 1.09863281250000e-2 5.49316406250000e-3 2.74658203125000e-3 1.37329101562500e-3 6.86645507812500e-4 3.43322753906250e-4 1.71661376953125e-4 8.58306884765625e-5 4.29153442382812e-5 2.14576721191406e-5 1.07288360595703e-5 5.36441802978516e-6</resolutions>
-</grid> -->
+</grid>  -->
 
 
    <source name="vmap0" type="wms">
       <getmap>
          <params>
-		 	<MAP>D:/mapserver/local.map</MAP>
+		 	   <MAP>D:/mapserver/local.map</MAP>
             <FORMAT>image/png</FORMAT>
-            <LAYERS>LNDRGN_A</LAYERS>
-            <LAYERS>LNDARE_A</LAYERS>
-            <LAYERS>SBDARE_A</LAYERS>
-            <LAYERS>DMPGRD</LAYERS>
-            <LAYERS>LAKARE</LAYERS>
-            <LAYERS>RIVERS_A</LAYERS>
-            <LAYERS>RESARE</LAYERS>
-            <LAYERS>DEPARE_A1</LAYERS>
-            <LAYERS>DEPARE_A2</LAYERS>
-            <LAYERS>DEPARE_A3</LAYERS>
-            <LAYERS>DEPARE_A4</LAYERS>
-            <LAYERS>OBSTRN_A</LAYERS>
-            <LAYERS>SLCONS_L</LAYERS>
-            <LAYERS>COALNE</LAYERS>
-            <LAYERS>DEPCNT</LAYERS>
-            <LAYERS>LIGHTS</LAYERS>
-            <LAYERS>RTPBCN</LAYERS>
-            <LAYERS>ROADWY</LAYERS>
-            <LAYERS>WATTUR_L</LAYERS>
-            <LAYERS>MAGVAR_L</LAYERS>
-            <LAYERS>RAILWY</LAYERS>
-            <LAYERS>DEPARE</LAYERS>
-            <LAYERS>RIVERS</LAYERS>
-            <LAYERS>SLCONS_P</LAYERS>
-            <LAYERS>LNDARE_P</LAYERS>
-            <LAYERS>RDOSTA</LAYERS>
-            <LAYERS>SBDARE_P</LAYERS>
-            <LAYERS>LNDMRK</LAYERS>
-            <LAYERS>CURENT</LAYERS>
-            <LAYERS>WRECKS1</LAYERS>
-            <LAYERS>WRECKS2</LAYERS>
-            <LAYERS>WRECKS5</LAYERS>
-            <LAYERS>TS_FEB1</LAYERS>
-            <LAYERS>TS_FEB2</LAYERS>
-            <LAYERS>MAGVAR_P</LAYERS>
-            <LAYERS>LNDRGN_P</LAYERS>
-            <LAYERS>BCNSPP</LAYERS>
-            <LAYERS>CTNARE</LAYERS>
-            <LAYERS>UWTROC3</LAYERS>
-             <LAYERS>UWTROC4</LAYERS>
-            <LAYERS>UWTROC5</LAYERS>
-            <LAYERS>FORSTC</LAYERS>
-            <LAYERS>BUAARE</LAYERS>
-            <LAYERS>WATTUR</LAYERS>
-            <LAYERS>OBSTRN9</LAYERS>
-            <LAYERS>OBSTRN_N</LAYERS>
+             <LAYERS>LNDRGN_A,LNDARE_A,SBDARE_A,DMPGRD,LAKARE,RIVERS_A,RESARE,DEPARE_A1,DEPARE_A2,DEPARE_A3,DEPARE_A4,OBSTRN_A,SLCONS_L,COALNE,DEPCNT,LIGHTS,RTPBCN,ROADWY,WATTUR_L,MAGVAR_L,RAILWY,DEPARE,RIVERS,SLCONS_P,LNDARE_P,RDOSTA,SBDARE_P,LNDMRK,CURENT,WRECKS1,WRECKS2,WRECKS5,TS_FEB1,TS_FEB2,MAGVAR_P,LNDRGN_P,BCNSPP,CTNARE,UWTROC3,UWTROC4,UWTROC5,FORSTC,BUAARE,WATTUR,OBSTRN9,OBSTRN_N</LAYERS>
+             
          </params>
       </getmap>
       
@@ -124,7 +80,7 @@
       <cache>tmpl</cache>
       <grid>WGS84</grid>
       <format>PNGQ_FAST</format>
-      <metatile>5 5</metatile>
+      <metatile>8 8</metatile>
       <metabuffer>10</metabuffer>
       <expires>3600</expires>
    </tileset>
