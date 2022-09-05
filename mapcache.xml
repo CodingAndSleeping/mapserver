@@ -15,8 +15,8 @@
    
    <cache name="tmpl" type="disk" layout="template">
       <template>E:/mapserver/ms4w/tmp/ms_tmp/cache/{tileset}/{z}/{x}/{y}.{ext}</template>
-      <!-- <xcount>64</xcount> -->
-     <!-- <ycount>64</ycount> -->
+      <xcount>64</xcount>
+     <ycount>64</ycount>
      <!-- <format>myjpeg</format> -->
    </cache> 
    
