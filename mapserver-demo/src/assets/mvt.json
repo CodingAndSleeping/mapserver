@@ -1,0 +1,58 @@
+{
+    "version": 8,
+    "name": "simple",
+    "sources": {
+        "haitu": {
+            "type": "vector",
+            "tiles": [
+                "http://127.0.0.1:8181/cgi-bin/mapserv.exe?MAP=D:/mapserver/local3.map&mode=tile&tilemode=gmap&tile={x}+{y}+{z}&layers=all&map.imagetype=mvt"
+            ]
+        }
+    },
+
+    "layers": [
+        {
+            "id": "background",
+            "type": "background",
+            "paint": {
+                "background-color": "#f8f4f0"
+            }
+        },
+        {
+            "id": "DEPARE_A1",
+            "type": "fill",
+            "source": "haitu",
+            "source-layer": "DEPARE_A1",
+            "paint": {
+                "fill-color": "#f4b642"
+            }
+        },
+        {
+            "id": "DEPARE_A2",
+            "type": "fill",
+            "source": "haitu",
+            "source-layer": "DEPARE_A2",
+            "paint": {
+                "fill-color": "#f4b642"
+            }
+        },
+        {
+            "id": "DEPARE_A3",
+            "type": "fill",
+            "source": "haitu",
+            "source-layer": "DEPARE_A3",
+            "paint": {
+                "fill-color": "#f4b642"
+            }
+        },
+        {
+            "id": "DEPARE_A4",
+            "type": "fill",
+            "source": "haitu",
+            "source-layer": "DEPARE_A4",
+            "paint": {
+                "fill-color": "#f4b642"
+            }
+        }
+    ]
+}
